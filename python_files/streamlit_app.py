@@ -32,13 +32,13 @@ data = pd.read_csv("../datasets/sam_df_clean.csv")
 genre_df = process_genres(data)
 
 # Create the dropdown in the sidebar
-st.sidebar.title("Put your Soul in you Playlist")
+st.sidebar.title("Put your Soul in your Playlist")
 # Create a list of song names combined with their artists, sorted alphabetically
 song_names_with_artists = genre_df.apply(lambda row: f"{row['track_name']} | {row['artists']}", axis=1).tolist()
 song_names_with_artists.sort()  # Sort the list alphabetically
 
 # Create a dropdown select box with options for playlist lengths
-playlist_length = st.sidebar.selectbox("Choose your playlist length:", [5, 10, 25, 50, 100])
+playlist_length = st.sidebar.selectbox("Choose playlist length:", [5, 10, 25, 50, 100])
 
 # Dropdown select for song names with artists
 selected_song = st.sidebar.selectbox("Start typing to select your song:", song_names_with_artists)
