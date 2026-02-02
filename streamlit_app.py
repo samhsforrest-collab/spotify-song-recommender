@@ -20,13 +20,13 @@ from neural_network_functions import process_genres, prepare_numeric_features, b
 st.title("Music is the Answer. To your problems...")
 
 # Load logo
-image_path = "../assets/spoofify_logo.png"  # Ensure this path points to your logo image
+image_path = "assets/spoofify_logo.png"  # Ensure this path points to your logo image
 st.sidebar.image(image_path, width=200)  # Display the logo in the sidebar
 
 # Create a two-column layout for the first row
 col1, col2  = st.columns (2) # Adjust the widths if desired
 
-data = pd.read_csv("../datasets/sam_df_clean.csv")
+data = pd.read_csv("datasets/sam_df_clean.csv")
 
 # create new df with additional genre column and adding integer columns for genre ids
 genre_df = process_genres(data)
